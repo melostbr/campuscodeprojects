@@ -1,0 +1,26 @@
+pt-BR:
+  activerecord:
+    models:
+      budget: 'Orçamentos'
+    attributes:
+      budget:
+        client_name: 'Nome'
+        client_email: 'Email'
+        client_phone: 'Telefone'
+        description: 'Descrição'
+      equipment:
+        code: 'Código'
+        name: 'Nome'
+        serial_number: 'Número de Série'
+        supplier: 'Fornecedor'
+        category: 'Categoria'
+        value: 'Valor'
+        status: 'Status'
+  budgets:
+    create:
+      alert: 'Não foi possível enviar o orçamento, verifique os erros abaixo.'
+      success: 'Orçamento enviado com sucesso!'
+  equipment:
+    create:
+      alert: 'Não foi possível criar o equipamento, verifique os erros abaixo.'
+      success: 'Equipamento criado com sucesso!'

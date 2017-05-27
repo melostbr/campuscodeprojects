@@ -1,0 +1,22 @@
+<p><%= notice %></p>
+<h1><%= t('.page_title') %></h1>
+<h2><%= @challenge.title %></h2>
+<p><%= @challenge.description %></p>
+
+<% if current_user && @challenge.started_by?(current_user)%>
+  <span>Iniciado</span>
+  <%= link_to 'Finalizar', complete_challenge_path(@challenge), method: :post %>
+<% else %>
+  <%= link_to 'Iniciar', start_challenge_path(@challenge), method: :post %>
+<% end %>
+
+<% @challenge.comments.each do |comment| %>
+  <small>Comentado por: <%= comment.user.login %></small>
+  <p><%= comment.body %></p>
+<% end %>
+
+<%= form_for [@challenge, @challenge.comments.build] do |f| %>
+  <%= f.label :body %>
+  <%= f.text_field :body %>
+  <%= f.submit %>
+<% end %>

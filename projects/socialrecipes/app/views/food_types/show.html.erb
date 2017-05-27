@@ -1,0 +1,11 @@
+<ol class="breadcrumb">
+  <li><%= link_to 'Inicio', root_path %></li>
+  <li><%= link_to "Minhas Receitas", recipes_path%></li>
+  <li><%= link_to 'Cadastrar Receita', new_recipe_path  %></li>
+  <li class="active">Novo Tipo</li>
+</ol>
+
+<div id="new_food_preference">
+  <h1>Preferencia de Comida</h1>
+  <p><%= @food_type.name %></p>
+</div>

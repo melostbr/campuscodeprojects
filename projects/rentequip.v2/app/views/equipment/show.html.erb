@@ -1,0 +1,27 @@
+<h1><%= @equipment.name %> <%= @equipment.serial_number %></h1>
+<hr>
+
+<dl class="dl-horizontal">
+  <dt>Código</dt>
+  <dd><%= @equipment.code %></dd>
+
+  <dt>Nome</dt>
+  <dd><%= @equipment.name %></dd>
+
+  <dt>Número de Série</dt>
+  <dd><%= @equipment.serial_number %></dd>
+
+  <dt>Fornecedor</dt>
+  <dd><%= @equipment.supplier %></dd>
+
+  <dt>Categoria</dt>
+  <dd><%= @equipment.category %></dd>
+
+  <dt>Valor</dt>
+  <dd><%= number_to_currency(@equipment.value, locale: :'pt-BR')  %></dd>
+
+  <dt>Status</dt>
+  <dd><%= @equipment.status %></dd>
+</dl>
+
+<%= link_to 'Voltar', :back %>

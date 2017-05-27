@@ -1,0 +1,12 @@
+<h1><%= @company.name %></h1>
+<%= @company.location %>
+<%= @company.mail %>
+<%= @company.phone %>
+
+
+<hr>
+<% if @company.jobs.any? %>
+  <%= render @company.jobs %>
+<% else %>
+    <p>Nenhuma vaga disponível</p>
+<% end %>

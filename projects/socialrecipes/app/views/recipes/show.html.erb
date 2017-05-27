@@ -1,0 +1,23 @@
+<div id="show_recipe">
+  <h2>Receita de <%= @recipe.name %></h2>
+  <hr>
+
+  <div class="photo">
+    <%= image_tag @recipe.photo.url %>
+  </div>
+    <p> <strong>Cozinha: </strong> <%= @recipe.world_cuisine.name %></p>
+    <p> <strong>Tipo: </strong> <%= @recipe.food_type.name %></p>
+    <p> <strong>Preferência: </strong> <%= @recipe.food_preference.name %></p>
+    <p> <strong>Serve: </strong> <%= @recipe.people %> pessoas</p>
+    <p> <strong>Tempo de preparo: </strong> </p>
+    <%= @recipe.preparation_time %> minutos</p>
+    <p> <strong>Dificuldade: </strong> <%= @recipe.dificulty %></p>
+    <div class="row">
+      <p> <strong>Ingredientes: </strong> </p>
+      <p class='col-md-6'> <%= @recipe.ingredients %></p>
+    </div>
+    <div class="row">
+      <p> <strong>Modo de Preparo: </strong> </p>
+      <p class='col-md-6'> <%= @recipe.steps %></p>
+    </div>
+<div>

@@ -1,0 +1,64 @@
+<ol class="breadcrumb">
+  <li><%= link_to 'Inicio', root_path %></li>
+  <li><%= link_to "Minhas Receitas", recipes_path%></li>
+  <li class="active">Cadastrar Receita</li>
+</ol>
+
+<%= simple_form_for @recipe, url: recipes_path do |f| %>
+  <div class="row">
+    <div class="col-md-6">
+      <%= f.input :name, label: 'Nome da Receita', class: 'form-control' %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <%= f.association :world_cuisine, label: 'Nome da Cozinha', include_blank: false %>
+    </div>
+    <div class="col-md-6">
+      <%= link_to  'Nova Cozinha', new_world_cuisine_path, class: 'btn btn-default btn-recipe' %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+        <%= f.association :food_type, label: 'Tipo de Comida', include_blank: false %>
+    </div>
+    <div class="col-md-6">
+      <%= link_to  'Novo Tipo', new_food_type_path, class: 'btn btn-default btn-recipe' %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <%= f.association :food_preference, label: 'Preferencia de Comida', include_blank: false %>
+    </div>
+    <div class="col-md-6">
+      <%= link_to  'Nova Preferencia', new_food_preference_path, class: 'btn btn-default btn-recipe' %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      <%= f.input :people, label: 'Serve quantas pessoas?' %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      <%= f.input :preparation_time, label: 'Tempo de Preparo', placeholder: 'Em minutos' %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      <%= f.input :dificulty, label: 'Nivel de Dificuldade', placeholder: 'Facil | Medio | Dificil' %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8">
+      <%= f.input :ingredients, as: :text, label: 'Ingredientes' %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8">
+      <%= f.input :steps, as: :text, label: 'Modo de Preparo' %>
+    </div>
+  </div>
+  <%= f.input :photo, as: :file, label: 'Foto' %>
+  <%= f.button :submit, 'Criar Receita', class: 'btn-confirm'%>
+<% end  %>

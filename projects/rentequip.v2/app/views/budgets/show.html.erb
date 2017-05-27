@@ -1,0 +1,18 @@
+<h1>Orçamento <%=@budget.id%></h1>
+<hr>
+
+<dl class="dl-horizontal">
+  <dt>Nome</dt>
+  <dd><%= @budget.client_name %></dd>
+
+  <dt>E-mail</dt>
+  <dd><%= @budget.client_email %></dd>
+
+  <dt>Telefone</dt>
+  <dd><%= @budget.client_phone %></dd>
+
+  <dt>Descrição</dt>
+  <dd><%= @budget.description %></dd>
+</dl>
+
+<%= link_to 'Voltar', root_path %>

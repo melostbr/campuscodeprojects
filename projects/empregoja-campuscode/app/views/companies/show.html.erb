@@ -1,0 +1,29 @@
+<h2><%= @company.name %></h2>
+<hr>
+<div class="row">
+  <div class="col-md-2">
+    <strong>Localização: </strong>
+  </div>
+  <div class="col-md-10">
+    <%= @company.location %>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-2">
+    <strong>E-mail: </strong>
+  </div>
+  <div class="col-md-10">
+    <%= @company.mail %>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-2">
+    <strong>Telefone: </strong>
+  </div>
+  <div class="col-md-10">
+    <%= @company.phone %>
+  </div>
+</div>
+
+<h2>Vagas</h2>
+<%= render @company.jobs %>

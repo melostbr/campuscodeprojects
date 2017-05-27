@@ -1,0 +1,18 @@
+<% if @job.errors.any? %>
+  <% @job.errors.full_messages.each do |msg| %>
+    <div class="alert alert-danger">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      <strong><%= msg %></strong>
+    </div>
+  <% end %>
+<% end %>
+
+<%= simple_form_for @job do |f| %>
+  <%= f.input :title %>
+  <%= f.association :company %>
+  <%= f.input :location %>
+  <%= f.association :category %>
+  <%= f.input :description, as: :text %>
+  <%= f.input :featured, as: :boolean %>
+  <%= f.button :submit, class: 'btn btn-default col-md-3' %>
+<% end %>

@@ -1,0 +1,9 @@
+== empregoja
+
+A website build in Ruby on Rails for applying to available jobs.
+
+Feel free to download the code. Don't forget to run "bundle install" in order to run the web app properly.
+
+If you'd like, you can see web app working in this link:
+
+https://empregoja-melostbr.herokuapp.com/

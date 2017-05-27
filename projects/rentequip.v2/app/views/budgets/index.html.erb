@@ -1,0 +1,4 @@
+<% @budgets.each do |budget| %>
+  <h1><%= link_to "Orçamento #{budget.id}", budget_path(budget.id) %></h1>
+  <%= budget.description %>
+<% end %>

@@ -1,0 +1,15 @@
+<ol class="breadcrumb">
+  <li><%= link_to 'Inicio', root_path %></li>
+  <li><%= link_to "Minhas Receitas", recipes_path%></li>
+  <li><%= link_to 'Cadastrar Receita', new_recipe_path  %></li>
+  <li class="active">Nova Preferencia</li>
+</ol>
+
+<%= simple_form_for @food_preference do |f| %>
+  <div class="row">
+    <div class="col-md-6">
+      <%= f.input :name, label: 'Nome', placeholder: 'Vegetariana, sem glúten, sem lactose...' %>
+    </div>
+  </div>
+  <%= f.button :submit, 'Criar Preferencia' %>
+<% end %>

@@ -1,0 +1,43 @@
+<div id="index_recipe">
+  <div class="col-md-3">
+    <aside>
+      <h3>Preferência</h3>
+        <ul class="list-group">
+          <% @food_preferences.each do |food_preference| %>
+            <li><%= link_to food_preference.name, food_preference, class: 'list-group-item'%></li>
+          <% end %>
+        </ul>
+      <h3>Tipo</h3>
+        <ul class="list-group">
+          <% @food_types.each do |food_type| %>
+            <li><%= link_to food_type.name, food_type, class: 'list-group-item'%></li>
+          <% end %>
+        </ul>
+      <h3>Cozinha</h3>
+      <ul class="list-group">
+        <% @world_cuisines.each do |world_cuisine| %>
+          <li><%= link_to world_cuisine.name, world_cuisine, class: 'list-group-item'%></li>
+        <% end %>
+      </ul>
+    </aside>
+  </div>
+  <div class="col-md-9">
+    <div class="row">
+      <h2>Últimas Receitas</h2>
+        <% @recipes.each do |recipe| %>
+          <div class="col-md-6">
+            <div class="photo col-md-6">
+              <%= image_tag recipe.photo.url %>
+            </div>
+            <aside class="col-md-6">
+              <p><%= link_to recipe.name, recipe %></p>
+              <p><strong>Preferencia: </strong><%= recipe.food_preference.name %></p>
+              <p><strong>Tipo: </strong><%= recipe.food_type.name %></p>
+              <p><strong>Cozinha: </strong><%= recipe.world_cuisine.name %></p>
+              <p><strong>Dificuldade: </strong><%= recipe.dificulty %></p>
+            </aside>
+          </div>
+        <% end %>
+    </div>
+  </div>
+</div>

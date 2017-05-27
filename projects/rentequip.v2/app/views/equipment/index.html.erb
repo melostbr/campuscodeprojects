@@ -1,0 +1,16 @@
+<h1>Equipamentos Cadastrados</h1>
+<hr>
+
+<% if @equipment.any?  %>
+  <% @equipment.each do |equipment| %>
+    <div class="">
+      <%= link_to equipment_path(equipment.id) do%>
+        <i class="fa fa-plus-square-o" aria-hidden="true"></i>
+        <%= "#{equipment.name} #{equipment.serial_number}"%> 
+      <% end %>
+      <p class="text-center"> <%= equipment.status %> </p>
+    </div>
+  <% end %>
+<% else %>
+  <p> Não existem equipamentos cadastrados.</p>
+<% end %>

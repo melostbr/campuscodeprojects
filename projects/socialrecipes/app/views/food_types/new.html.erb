@@ -1,0 +1,15 @@
+<ol class="breadcrumb">
+  <li><%= link_to 'Inicio', root_path %></li>
+  <li><%= link_to "Minhas Receitas", recipes_path%></li>
+  <li><%= link_to 'Cadastrar Receita', new_recipe_path  %></li>
+  <li class="active">Novo Tipo</li>
+</ol>
+
+<%= simple_form_for @food_type do |f| %>
+  <div class="row">
+    <div class="col-md-6">
+      <%= f.input :name, label: 'Nome', placeholder: 'Sobremesa, café da manhã, prato principal...' %>
+    </div>
+  </div>
+  <%= f.button :submit, 'Criar Tipo' %>
+<% end %>

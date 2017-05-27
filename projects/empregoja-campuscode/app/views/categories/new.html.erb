@@ -1,0 +1,14 @@
+<h2>Nova Categoria</h2>
+<hr>
+
+<% if @category.errors.any? %>
+  <div class="alert alert-danger">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong><%= flash[:warning] %></strong>
+  </div>
+<% end  %>
+
+<%= simple_form_for @category do |f| %>
+  <%= f.input :name %>
+  <%= f.button :submit, 'Criar Categoria', class:'btn btn-default' %>
+<% end %>
